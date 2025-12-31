@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #74ebd5, #acb6e5);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .todo-box {
+            width: 350px;
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        h3 {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .input-area {
+            display: flex;
+            gap: 8px;
+        }
+
+        input {
+            flex: 1;
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 10px 15px;
+            border: none;
+            background: #74ebd5;
+            color: #fff;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+            max-height: 180px;
+            overflow-y: auto;
+        }
+
+        li {
+            background: #f4f7f8;
+            margin-bottom: 8px;
+            padding: 10px;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="todo-box">
+        <h3>My Todo List</h3>
+
+        <div class="input-area">
+            <input type="text" id="todoInput" placeholder="Enter your task">
+            <button onclick="addTodo()">Add</button>
+        </div>
+
+        <ul id="todoList"></ul>
+    </div>
+    <script>
+        let todos = [];
+
+        function addTodo() {
+            let input = document.getElementById("todoInput");
+            let value = input.value.trim();
+
+            if (value === "") {
+                alert("Please enter a task");
+                return;
+            }
+
+            todos.push(value);
+            input.value = "";
+            displayTodos();
+        }
+
+        function displayTodos() {
+            let list = document.getElementById("todoList");
+            list.innerHTML = "";
+
+            for (let i = 0; i < todos.length; i++) {
+                list.innerHTML += `<li>${todos[i]}</li>`;
+            }
+        }
+    </script>
+</body>
+
+</html>
