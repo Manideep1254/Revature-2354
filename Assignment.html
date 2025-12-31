@@ -9,25 +9,30 @@
 
 <body>
     <ul id="item1">
-        <h3>Display all student names in an HTML unordered list.</h3>
+        <h3>1-Display all student names in an HTML unordered list.</h3>
     </ul>
+    <hr>
 
     <ul id="item2">
-        <h3>Display only students who scored more than 60 marks.</h3>
+        <h3>2-Display only students who scored more than 60 marks.</h3>
 
 
     </ul>
+    <hr>
     <ul id="item3">
-        <h3>Count how many students belong to each department</h3>
+        <h3>3-Count how many students belong to each department</h3>
 
 
     </ul>
+    <hr>
     <ul id="item4">
-        <h3>Find the student with the highest marks.</h3>
+        <h3>4-Find the student with the highest marks.</h3>
 
 
     </ul>
-    <table id="student-table">
+    <hr>
+    <h3>5-Display students in a table with columns: Name, Marks, Department.</h3>
+    <table id="student-table" border="1px">
         <thead>
             <tr>
                 <th>Name &nbsp;</th>
@@ -39,10 +44,32 @@
 
         </tbody>
     </table>
-    <h3>Calculate the average marks of all students.</h3>
-   <p id="avgmarks">
-    
-   </p>
+    <hr>
+    <h3>6-Calculate the average marks of all students.</h3>
+    <p id="avgmarks">
+
+    </p>
+    <hr>
+    <ul id="item6">
+        <h3>7-Display only CSE students in HTML.</h3>
+    </ul>
+    <hr>
+
+    <ul id="item7">
+        <h3>8-Sort students by marks in descending order.</h3>
+    </ul>
+    <hr>
+
+    <ul id="item8">
+        <h3>9-Add a new student object and update the HTML list.
+        </h3>
+
+    </ul>
+    <hr>
+
+    <ul id="item9">
+        <h3>10-Highlight students who failed (marks < 50) in red color.</h3>
+    </ul>
 
     <script>
 
@@ -54,7 +81,7 @@
             { id: 5, name: "Kiran", marks: 88, department: "ECE" }
         ];
 
-        // Display all student names in an HTML unordered list.
+        //1)Display all student names in an HTML unordered list.
         let ulelement = document.getElementById("item1");
         students.forEach((student) => {
             const student_name = document.createElement("li");
@@ -62,7 +89,7 @@
             ulelement.appendChild(student_name);
         });
 
-        //Display only students who scored more than 60 marks.
+        //2)Display only students who scored more than 60 marks.
         let ulelement1 = document.getElementById("item2");
         let moremarks = students.filter(p => p.marks > 60);
         moremarks.forEach((student) => {
@@ -71,7 +98,7 @@
             ulelement1.appendChild(li);
         });
 
-        //Count how many students belong to each department
+        //3)Count how many students belong to each department
         let ulelement2 = document.getElementById("item3");
         let deptcounts = students.reduce((p, q) => {
             p[q.department] = (p[q.department] || 0) + 1;
@@ -84,14 +111,15 @@
             ulelement2.appendChild(li);
         }
 
-        //Find the student with the highest marks.
+        //4)Find the student with the highest marks.
         let ulelement3 = document.getElementById("item4");
         let highestmarks = students.sort((a, b) => b.marks - a.marks);
         const li = document.createElement("li");
         li.textContent = `${highestmarks[0].name}-${highestmarks[0].marks}`;
         ulelement3.appendChild(li);
 
-        //Display students in a table with columns: Name, Marks, Department.
+
+        //5)Display students in a table with columns: Name, Marks, Department.
         let tbody = document.querySelector("#student-table tbody");
         students.forEach((student) => {
             const row = document.createElement("tr");
@@ -104,15 +132,51 @@
         });
 
 
-        //Calculate the average marks of all students.
-        let totalmarks=students.reduce((sum,p)=>sum+p.marks,0);
-        let avgMarks=totalmarks/students.length;
-        document.getElementById("avgmarks").textContent=`Average marks - ${avgMarks}`;
+        //6)Calculate the average marks of all students.
+        let totalmarks = students.reduce((sum, p) => sum + p.marks, 0);
+        let avgMarks = totalmarks / students.length;
+        document.getElementById("avgmarks").textContent = `Average marks - ${avgMarks}`;
         // li.textContent=`${avgmarks}`;
 
+        //7)Display only CSE students in HTML.
+        let ulelement4 = document.getElementById("item6");
+        let csestudents = students.filter((student) => student.department === "CSE");
+        csestudents.forEach(student => {
+            const li = document.createElement("li");
+            li.textContent = `${student.name} - ${student.marks}`;
+            ulelement4.appendChild(li);
 
+        })
 
+        //8)Sort students by marks in descending order.
+        let ulelement5 = document.getElementById("item7");
+        highestmarks.forEach((student) => {
+            const li = document.createElement("li");
+            li.textContent = `${student.name} - ${student.marks}`;
+            ulelement5.appendChild(li);
+        })
 
+        //9)Add a new student object and update the HTML list.
+
+        let ulelement6 = document.getElementById("item8");
+        students.push({ id: 6, name: "Tulasi", marks: 88, department: "CSE" });
+        students.forEach((student) => {
+            const li = document.createElement("li");
+            li.textContent = `${student.id}-${student.name}-${student.department}-${student.marks}`;
+            ulelement6.appendChild(li);
+        })
+
+        //10)Highlight students who failed (marks < 50) in red color.
+
+        let ulelement7 = document.getElementById("item9");
+        students.forEach((student) => {
+            const li = document.createElement("li");
+            li.textContent = `${student.id}-${student.name}-${student.department}-${student.marks}`;
+            if (student.marks < 50) {
+                li.style.color = "red";
+            }
+            ulelement7.appendChild(li);
+        })
 
 
     </script>
