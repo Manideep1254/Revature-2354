@@ -621,7 +621,7 @@ select emp_id,emp_name,designation from employees where designation not in('Deve
 
 18)Display employees whose name starts with ‘A’.
 
-select emp_id,emp_name,salary from employees where emp_name='A%';
+select emp_id,emp_name,salary from employees where emp_name like 'A%';
 
 
     EMP_ID EMP_NAME       SALARY
@@ -654,8 +654,469 @@ select emp_id,email_id from employees where email_id is null;
       1018
       1021
 
-21)
+21)Display employees whose salary is NOT NULL.
+
+select emp_id,emp_name,salary from employees where salary is not null;
 
 
+    EMP_ID EMP_NAME       SALARY
+---------- ---------- ----------
+      1001 Arun            45000
+      1002 Divya           40000
+      1003 Mubeen          55000
+      1005 Anita           38000
+      1006 Kumar           32000
+      1007 Divya           40000
+      1008 Rahul           45000
+      1010 Amit            60000
+      1011 Pooja           40000
+      1012 Ramesh          30000
+      1013 Suresh          45000
+      1014 Neha            38000
+      1015 Arun            45000
+      1017 Meena           32000
+      1018 Vijay           35000
+      1019 Anita           38000
+      1020 Rohit           45000
+
+17 rows selected.
+
+22)Display employees whose email is NOT NULL
+
+select emp_id,emp_name,email_id from employees where email is not null;
 
 
+    EMP_ID EMP_NAME   EMAIL_ID
+---------- ---------- ----------------------------------------
+      1001 Arun       arun@company.com
+      1002 Divya      divya@company.com
+      1003 Mubeen     mubeen@company.com
+      1004 Ravi       ravi@company.com
+      1005 Anita      anita@company.com
+      1006 Kumar      kumar@company.com
+      1007 Divya      divya.it@company.com
+      1009 Sneha      sneha@company.com
+      1010 Amit       amit@company.com
+      1012 Ramesh     ramesh@company.com
+      1013 Suresh     suresh@company.com
+      1014 Neha       neha@company.com
+      1015 Arun       arun.it@company.com
+      1016 Kiran      kiran@company.com
+      1017 Meena      meena@company.com
+      1019 Anita      anita.sales@company.com
+      1020 Rohit      rohit@company.com
+
+17 rows selected.
+
+23)Display employees whose name ends with ‘i’
+
+select emp_id,emp_name,salary from employees where emp_name like '%i';
+
+
+    EMP_ID EMP_NAME       SALARY
+---------- ---------- ----------
+      1004 Ravi
+
+24)Display employees whose name contains ‘vi’.
+
+select emp_id,emp_name,salary from employees where emp_name like '%vi%';
+
+
+    EMP_ID EMP_NAME       SALARY
+---------- ---------- ----------
+      1004 Ravi
+
+25)Display employees whose email contains ‘@company.com’.
+
+select emp_id,emp_name,email_id from employees where email_id like '%@company.com%';
+
+
+    EMP_ID EMP_NAME   EMAIL_ID
+---------- ---------- ----------------------------------------
+      1001 Arun       arun@company.com
+      1002 Divya      divya@company.com
+      1003 Mubeen     mubeen@company.com
+      1004 Ravi       ravi@company.com
+      1005 Anita      anita@company.com
+      1006 Kumar      kumar@company.com
+      1007 Divya      divya.it@company.com
+      1009 Sneha      sneha@company.com
+      1010 Amit       amit@company.com
+      1012 Ramesh     ramesh@company.com
+      1013 Suresh     suresh@company.com
+      1014 Neha       neha@company.com
+      1015 Arun       arun.it@company.com
+      1016 Kiran      kiran@company.com
+      1017 Meena      meena@company.com
+      1019 Anita      anita.sales@company.com
+      1020 Rohit      rohit@company.com
+
+17 rows selected.
+
+26)Display employees whose designation ends with ‘Engineer’
+
+select emp_id,emp_name,designation from employees where designation like '%Engineer';
+
+
+    EMP_ID EMP_NAME   DESIGNATION
+---------- ---------- ------------------------------
+      1012 Ramesh     Support Engineer
+
+27)Display all employees ordered by salary ascending.
+
+select emp_id,emp_name,salary from employees order by salary asc;
+
+ EMP_ID EMP_NAME   DESIGNATION                        SALARY
+---------- ---------- ------------------------------ ----------
+      1012 Ramesh     Support Engineer                    30000
+      1017 Meena      Recruiter                           32000
+      1006 Kumar      Recruiter                           32000
+      1018 Vijay      Tester                              35000
+      1014 Neha       Sales Executive                     38000
+      1005 Anita      Sales Executive                     38000
+      1019 Anita      Sales Executive                     38000
+      1007 Divya      Tester                              40000
+      1002 Divya      HR Executive                        40000
+      1011 Pooja      HR Executive                        40000
+      1001 Arun       Developer                           45000
+      1013 Suresh     Developer                           45000
+      1020 Rohit      Developer                           45000
+      1015 Arun       Developer                           45000
+      1008 Rahul      Developer                           45000
+      1003 Mubeen     Senior Developer                    55000
+      1010 Amit       Sales Manager                       60000
+      1021 Sanjay     Developer
+      1009 Sneha      Analyst
+      1004 Ravi       Accountant
+      1016 Kiran      Accountant
+
+28)Display employees ordered by department ASC and salary DESC.
+
+
+select emp_id,emp_name,department,salary from employees order by department asc;
+
+    EMP_ID EMP_NAME   DEPARTMENT               SALARY
+---------- ---------- -------------------- ----------
+      1016 Kiran      Finance
+      1009 Sneha      Finance
+      1004 Ravi       Finance
+      1002 Divya      HR                        40000
+      1011 Pooja      HR                        40000
+      1006 Kumar      HR                        32000
+      1017 Meena      HR                        32000
+      1021 Sanjay     IT
+      1003 Mubeen     IT                        55000
+      1008 Rahul      IT                        45000
+      1015 Arun       IT                        45000
+      1020 Rohit      IT                        45000
+      1001 Arun       IT                        45000
+      1013 Suresh     IT                        45000
+      1007 Divya      IT                        40000
+      1018 Vijay      IT                        35000
+      1012 Ramesh     IT                        30000
+      1010 Amit       Sales                     60000
+      1019 Anita      Sales                     38000
+      1005 Anita      Sales                     38000
+      1014 Neha       Sales                     38000
+
+21 rows selected.
+
+29)Display employees ordered by location ASC and employee name ASC
+
+select emp_id,emp_name,location,salary from employees order by location asc,emp_name desc;
+
+
+    EMP_ID EMP_NAME   LOCATION                 SALARY
+---------- ---------- -------------------- ----------
+      1017 Meena      Bangalore                 32000
+      1002 Divya      Bangalore                 40000
+      1007 Divya      Bangalore                 40000
+      1013 Suresh     Chennai                   45000
+      1021 Sanjay     Chennai
+      1020 Rohit      Chennai                   45000
+      1008 Rahul      Chennai                   45000
+      1011 Pooja      Chennai                   40000
+      1003 Mubeen     Chennai                   55000
+      1006 Kumar      Chennai                   32000
+      1001 Arun       Chennai                   45000
+      1015 Arun       Chennai                   45000
+      1014 Neha       Delhi                     38000
+      1005 Anita      Delhi                     38000
+      1019 Anita      Delhi                     38000
+      1010 Amit       Delhi                     60000
+      1018 Vijay      Hyderabad                 35000
+      1012 Ramesh     Hyderabad                 30000
+      1009 Sneha      Mumbai
+      1004 Ravi       Mumbai
+      1016 Kiran      Mumbai
+
+21 rows selected.
+
+30)Display employees ordered by department ASC and salary DESC
+
+select emp_id,emp_name,department,salary from employees order by department asc,salary desc;
+
+ EMP_ID EMP_NAME   DEPARTMENT               SALARY
+---------- ---------- -------------------- ----------
+      1016 Kiran      Finance
+      1009 Sneha      Finance
+      1004 Ravi       Finance
+      1002 Divya      HR                        40000
+      1011 Pooja      HR                        40000
+      1006 Kumar      HR                        32000
+      1017 Meena      HR                        32000
+      1021 Sanjay     IT
+      1003 Mubeen     IT                        55000
+      1008 Rahul      IT                        45000
+      1015 Arun       IT                        45000
+      1020 Rohit      IT                        45000
+      1001 Arun       IT                        45000
+      1013 Suresh     IT                        45000
+      1007 Divya      IT                        40000
+      1018 Vijay      IT                        35000
+      1012 Ramesh     IT                        30000
+      1010 Amit       Sales                     60000
+      1019 Anita      Sales                     38000
+      1005 Anita      Sales                     38000
+      1014 Neha       Sales                     38000
+
+21 rows selected.
+
+31)Display employees working in IT department AND salary > 45,000.
+
+SELECT emp_id, emp_name, department, salary from employees where department='IT' and salary>45000;
+
+    EMP_ID EMP_NAME   DEPARTMENT               SALARY
+---------- ---------- -------------------- ----------
+      1003 Mubeen     IT                        55000
+
+32)Display employees working in HR OR Sales department
+
+SELECT emp_id, emp_name, department FROM employees WHERE department IN ('HR', 'Sales');
+
+ EMP_ID EMP_NAME   DEPARTMENT
+---------- ---------- --------------------
+      1002 Divya      HR
+      1005 Anita      Sales
+      1006 Kumar      HR
+      1010 Amit       Sales
+      1011 Pooja      HR
+      1014 Neha       Sales
+      1017 Meena      HR
+      1019 Anita      Sales
+
+8 rows selected.
+
+33)Update salary to 50,000 for employees whose salary is NULL.
+
+UPDATE employees SET salary = 50000 WHERE salary IS NULL;
+
+4 rows updated.
+
+34)Increase salary by 5,000 for all IT employees
+
+UPDATE employees SET salary = salary + 5000 WHERE department = 'IT';
+
+10 rows updated.
+
+35)Display employees having the same name more than once.
+
+SELECT emp_name, COUNT(*) AS count_of_employees FROM employees GROUP BY emp_name HAVING COUNT(*) > 1;
+
+EMP_NAME   COUNT_OF_EMPLOYEES
+---------- ------------------
+Arun                        2
+Divya                       2
+Anita                       2
+
+36)Display employees having the same salary.
+
+SELECT salary, COUNT(*) AS emp_count FROM employees GROUP BY salary HAVING COUNT(*) > 1;
+
+
+    SALARY  EMP_COUNT
+---------- ----------
+     50000          8
+     40000          3
+     60000          2
+     38000          3
+     32000          2
+
+37)Display employees working in the same department and same location.
+
+SELECT department, location, COUNT(*) AS emp_count FROM employees GROUP BY department, location HAVING COUNT(*) > 1;
+
+
+DEPARTMENT           LOCATION              EMP_COUNT
+-------------------- -------------------- ----------
+IT                   Chennai                       7
+HR                   Bangalore                     2
+Finance              Mumbai                        3
+Sales                Delhi                         4
+HR                   Chennai                       2
+IT                   Hyderabad                     2
+
+6 rows selected.
+
+38)Update location to Hyderabad for employees working in HR
+
+UPDATE employees SET location = 'Hyderabad' WHERE department = 'HR';
+
+4 rows updated.
+
+39)Display employees NOT working in IT department.
+
+SELECT emp_id, emp_name, department FROM employees WHERE department NOT IN ('IT');
+
+
+    EMP_ID EMP_NAME   DEPARTMENT
+---------- ---------- --------------------
+      1002 Divya      HR
+      1004 Ravi       Finance
+      1005 Anita      Sales
+      1006 Kumar      HR
+      1009 Sneha      Finance
+      1010 Amit       Sales
+      1011 Pooja      HR
+      1014 Neha       Sales
+      1016 Kiran      Finance
+      1017 Meena      HR
+      1019 Anita      Sales
+
+11 rows selected.
+
+40)Display employees working in IT AND located in Chennai.
+
+SELECT emp_id, emp_name, department, location FROM employees WHERE department = 'IT' AND location = 'Chennai';
+
+    EMP_ID EMP_NAME   DEPARTMENT           LOCATION
+---------- ---------- -------------------- --------------------
+      1001 Arun       IT                   Chennai
+      1003 Mubeen     IT                   Chennai
+      1008 Rahul      IT                   Chennai
+      1013 Suresh     IT                   Chennai
+      1015 Arun       IT                   Chennai
+      1020 Rohit      IT                   Chennai
+      1021 Sanjay     IT                   Chennai
+
+7 rows selected.
+
+41)Display employees ordered by salary DESC and joining date ASC.
+
+ SELECT emp_id, emp_name, salary, joining_date FROM employees ORDER BY salary DESC, joining_date ASC;
+
+    EMP_ID EMP_NAME       SALARY JOINING_D
+---------- ---------- ---------- ---------
+      1010 Amit            60000 01-DEC-19
+      1003 Mubeen          60000 20-MAR-23
+      1021 Sanjay          55000 02-FEB-20
+      1008 Rahul           50000 14-MAR-20
+      1004 Ravi            50000 18-JUL-20
+      1013 Suresh          50000 30-OCT-20
+      1015 Arun            50000 09-SEP-21
+      1001 Arun            50000 10-JAN-22
+      1020 Rohit           50000 18-NOV-22
+      1016 Kiran           50000 21-DEC-22
+      1009 Sneha           50000 08-JAN-23
+      1007 Divya           45000 25-JUN-22
+      1011 Pooja           40000 19-APR-21
+      1002 Divya           40000 15-MAY-21
+      1018 Vijay           40000 01-APR-23
+      1019 Anita           38000 07-JUL-21
+      1005 Anita           38000 12-SEP-22
+      1014 Neha            38000 14-FEB-23
+      1012 Ramesh          35000 10-AUG-22
+      1017 Meena           32000 11-JUN-20
+      1006 Kumar           32000 05-NOV-21
+
+21 rows selected.
+
+42)Display all employees ordered by salary descending.
+
+SELECT emp_id, emp_name, salary FROM employees ORDER BY salary DESC;
+
+    EMP_ID EMP_NAME       SALARY
+---------- ---------- ----------
+      1003 Mubeen          60000
+      1010 Amit            60000
+      1021 Sanjay          55000
+      1015 Arun            50000
+      1008 Rahul           50000
+      1009 Sneha           50000
+      1020 Rohit           50000
+      1004 Ravi            50000
+      1013 Suresh          50000
+      1016 Kiran           50000
+      1001 Arun            50000
+      1007 Divya           45000
+      1011 Pooja           40000
+      1002 Divya           40000
+      1018 Vijay           40000
+      1005 Anita           38000
+      1019 Anita           38000
+      1014 Neha            38000
+      1012 Ramesh          35000
+      1006 Kumar           32000
+      1017 Meena           32000
+
+21 rows selected.
+
+43)Display all employees ordered by joining date ascending.
+
+SELECT emp_id, emp_name, joining_date FROM employees ORDER BY joining_date ASC;
+
+    EMP_ID EMP_NAME   JOINING_D
+---------- ---------- ---------
+      1010 Amit       01-DEC-19
+      1021 Sanjay     02-FEB-20
+      1008 Rahul      14-MAR-20
+      1017 Meena      11-JUN-20
+      1004 Ravi       18-JUL-20
+      1013 Suresh     30-OCT-20
+      1011 Pooja      19-APR-21
+      1002 Divya      15-MAY-21
+      1019 Anita      07-JUL-21
+      1015 Arun       09-SEP-21
+      1006 Kumar      05-NOV-21
+      1001 Arun       10-JAN-22
+      1007 Divya      25-JUN-22
+      1012 Ramesh     10-AUG-22
+      1005 Anita      12-SEP-22
+      1020 Rohit      18-NOV-22
+      1016 Kiran      21-DEC-22
+      1009 Sneha      08-JAN-23
+      1014 Neha       14-FEB-23
+      1003 Mubeen     20-MAR-23
+      1018 Vijay      01-APR-23
+
+21 rows selected.
+
+44)Display all employees ordered by employee name alphabetically.
+
+SELECT emp_id, emp_name FROM employees ORDER BY emp_name ASC;
+
+    EMP_ID EMP_NAME
+---------- ----------
+      1010 Amit
+      1019 Anita
+      1005 Anita
+      1001 Arun
+      1015 Arun
+      1002 Divya
+      1007 Divya
+      1016 Kiran
+      1006 Kumar
+      1017 Meena
+      1003 Mubeen
+      1014 Neha
+      1011 Pooja
+      1008 Rahul
+      1012 Ramesh
+      1004 Ravi
+      1020 Rohit
+      1021 Sanjay
+      1009 Sneha
+      1013 Suresh
+      1018 Vijay
+
+21 rows selected.
