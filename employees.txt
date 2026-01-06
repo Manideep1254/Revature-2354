@@ -1,0 +1,661 @@
+  1   create table employees(
+  2  emp_id Number generated always as identity(start with 1001 increment by 1) primary key,
+  3  emp_name varchar2(10),
+  4  gender varchar2(10),
+  5  department varchar2(20),
+  6  designation varchar2(30),
+  7  salary number,
+  8  location varchar2(20),
+  9  joining_date date,
+ 10  email_id varchar2(40));
+
+  Table Created.
+
+
+
+
+SQL> INSERT INTO employees
+  2  (emp_name, gender, department, designation, salary, location, joining_date, email_id)
+  3  VALUES
+  4  ('Divya', 'Female', 'HR', 'HR Executive', 40000, 'Bangalore',TO_DATE('2021-05-15','YYYY-MM-DD'), 'divya@company.com');
+
+1 row created.
+
+ INSERT INTO employees
+  2  (emp_name, gender, department, designation, salary, location, joining_date, email_id)
+  3  VALUES
+  4  ('Mubeen', 'Male', 'IT', 'Senior Developer', 55000, 'Chennai',
+  5   TO_DATE('2023-03-20','YYYY-MM-DD'), 'mubeen@company.com');
+
+1 row created.
+
+
+SQL> INSERT INTO employees
+  2  (emp_name, gender, department, designation, salary, location, joining_date, email_id)
+  3  VALUES
+  4  ('Ravi', 'Male', 'Finance', 'Accountant', NULL, 'Mumbai',
+  5   TO_DATE('2020-07-18','YYYY-MM-DD'), 'ravi@company.com');
+
+1 row created.
+
+SQL> INSERT INTO employees
+  2  (emp_name, gender, department, designation, salary, location, joining_date, email_id)
+  3  VALUES
+  4  ('Anita', 'Female', 'Sales', 'Sales Executive', 38000, 'Delhi',
+  5   TO_DATE('2022-09-12','YYYY-MM-DD'), 'anita@company.com');
+
+1 row created.
+
+SQL> INSERT INTO employees
+  2  (emp_name, gender, department, designation, salary, location, joining_date, email_id)
+  3  VALUES
+  4  ('Kumar', 'Male', 'HR', 'Recruiter', 32000, 'Chennai',
+  5   TO_DATE('2021-11-05','YYYY-MM-DD'), 'kumar@company.com');
+
+1 row created.
+
+SQL> INSERT INTO employees
+  2  (emp_name, gender, department, designation, salary, location, joining_date, email_id)
+  3  VALUES
+  4  ('Divya', 'Female', 'IT', 'Tester', 40000, 'Bangalore',
+  5   TO_DATE('2022-06-25','YYYY-MM-DD'), 'divya.it@company.com');
+
+1 row created.
+
+SQL> select * from employees;
+
+    EMP_ID EMP_NAME   GENDER     DEPARTMENT           DESIGNATION                        SALARY LOCATION             JOINING_D EMAIL_ID
+---------- ---------- ---------- -------------------- ------------------------------ ---------- -------------------- --------- ----------------------------------------
+      1001 Arun       Male       IT                   Developer                           45000 Chennai              10-JAN-22 arun@company.com
+      1002 Divya      Female     HR                   HR Executive                        40000 Bangalore            15-MAY-21 divya@company.com
+      1003 Mubeen     Male       IT                   Senior Developer                    55000 Chennai              20-MAR-23 mubeen@company.com
+      1004 Ravi       Male       Finance              Accountant                                Mumbai               18-JUL-20 ravi@company.com
+      1005 Anita      Female     Sales                Sales Executive                     38000 Delhi                12-SEP-22 anita@company.com
+      1006 Kumar      Male       HR                   Recruiter                           32000 Chennai              05-NOV-21 kumar@company.com
+      1007 Divya      Female     IT                   Tester                              40000 Bangalore            25-JUN-22 divya.it@company.com
+
+7 rows selected.
+
+SQL> INSERT INTO employees
+  2  (emp_name, gender, department, designation, salary, location, joining_date, email_id)
+  3  VALUES
+  4  ('Rahul', 'Male', 'IT', 'Developer', 45000, 'Chennai',
+  5   TO_DATE('2020-03-14','YYYY-MM-DD'), NULL);
+
+1 row created.
+
+SQL> INSERT INTO employees
+  2  (emp_name, gender, department, designation, salary, location, joining_date, email_id)
+  3  VALUES
+  4  ('Sneha', 'Female', 'Finance', 'Analyst', NULL, 'Mumbai',
+  5   TO_DATE('2023-01-08','YYYY-MM-DD'), 'sneha@company.com');
+
+1 row created.
+
+SQL> INSERT INTO employees
+  2  (emp_name, gender, department, designation, salary, location, joining_date, email_id)
+  3  VALUES
+  4  ('Amit', 'Male', 'Sales', 'Sales Manager', 60000, 'Delhi',
+  5   TO_DATE('2019-12-01','YYYY-MM-DD'), 'amit@company.com');
+
+1 row created.
+
+SQL> INSERT INTO employees
+  2  (emp_name, gender, department, designation, salary, location, joining_date, email_id)
+  3  VALUES
+  4  ('Pooja', 'Female', 'HR', 'HR Executive', 40000, 'Chennai',
+  5   TO_DATE('2021-04-19','YYYY-MM-DD'), NULL);
+
+1 row created.
+
+SQL> INSERT INTO employees
+  2  (emp_name, gender, department, designation, salary, location, joining_date, email_id)
+  3  VALUES
+  4  ('Ramesh', 'Male', 'IT', 'Support Engineer', 30000, 'Hyderabad',
+  5   TO_DATE('2022-08-10','YYYY-MM-DD'), 'ramesh@company.com');
+
+1 row created.
+
+SQL> INSERT INTO employees
+  2  (emp_name, gender, department, designation, salary, location, joining_date, email_id)
+  3  VALUES
+  4  ('Suresh', 'Male', 'IT', 'Developer', 45000, 'Chennai',
+  5   TO_DATE('2020-10-30','YYYY-MM-DD'), 'suresh@company.com');
+
+1 row created.
+
+SQL> INSERT INTO employees
+  2  (emp_name, gender, department, designation, salary, location, joining_date, email_id)
+  3  VALUES
+  4  ('Neha', 'Female', 'Sales', 'Sales Executive', 38000, 'Delhi',
+  5   TO_DATE('2023-02-14','YYYY-MM-DD'), 'neha@company.com');
+
+1 row created.
+
+SQL> select * from employees;
+
+    EMP_ID EMP_NAME   GENDER     DEPARTMENT           DESIGNATION                        SALARY LOCATION             JOINING_D EMAIL_ID
+---------- ---------- ---------- -------------------- ------------------------------ ---------- -------------------- --------- ----------------------------------------
+      1001 Arun       Male       IT                   Developer                           45000 Chennai              10-JAN-22 arun@company.com
+      1002 Divya      Female     HR                   HR Executive                        40000 Bangalore            15-MAY-21 divya@company.com
+      1003 Mubeen     Male       IT                   Senior Developer                    55000 Chennai              20-MAR-23 mubeen@company.com
+      1004 Ravi       Male       Finance              Accountant                                Mumbai               18-JUL-20 ravi@company.com
+      1005 Anita      Female     Sales                Sales Executive                     38000 Delhi                12-SEP-22 anita@company.com
+      1006 Kumar      Male       HR                   Recruiter                           32000 Chennai              05-NOV-21 kumar@company.com
+      1007 Divya      Female     IT                   Tester                              40000 Bangalore            25-JUN-22 divya.it@company.com
+      1008 Rahul      Male       IT                   Developer                           45000 Chennai              14-MAR-20
+      1009 Sneha      Female     Finance              Analyst                                   Mumbai               08-JAN-23 sneha@company.com
+      1010 Amit       Male       Sales                Sales Manager                       60000 Delhi                01-DEC-19 amit@company.com
+      1011 Pooja      Female     HR                   HR Executive                        40000 Chennai              19-APR-21
+      1012 Ramesh     Male       IT                   Support Engineer                    30000 Hyderabad            10-AUG-22 ramesh@company.com
+      1013 Suresh     Male       IT                   Developer                           45000 Chennai              30-OCT-20 suresh@company.com
+      1014 Neha       Female     Sales                Sales Executive                     38000 Delhi                14-FEB-23 neha@company.com
+
+14 rows selected.
+
+SQL> INSERT INTO employees
+  2  (emp_name, gender, department, designation, salary, location, joining_date, email_id)
+  3  VALUES
+  4  ('Arun', 'Male', 'IT', 'Developer', 45000, 'Chennai',
+  5   TO_DATE('2021-09-09','YYYY-MM-DD'), 'arun.it@company.com');
+
+1 row created.
+
+SQL> INSERT INTO employees
+  2  (emp_name, gender, department, designation, salary, location, joining_date, email_id)
+  3  VALUES
+  4  ('Kiran', 'Male', 'Finance', 'Accountant', NULL, 'Mumbai',
+  5   TO_DATE('2022-12-21','YYYY-MM-DD'), 'kiran@company.com');
+
+1 row created.
+
+SQL> INSERT INTO employees
+  2  (emp_name, gender, department, designation, salary, location, joining_date, email_id)
+  3  VALUES
+  4  ('Meena', 'Female', 'HR', 'Recruiter', 32000, 'Bangalore',
+  5   TO_DATE('2020-06-11','YYYY-MM-DD'), 'meena@company.com');
+
+1 row created.
+
+SQL> INSERT INTO employees
+  2  (emp_name, gender, department, designation, salary, location, joining_date, email_id)
+  3  VALUES
+  4  ('Vijay', 'Male', 'IT', 'Tester', 35000, 'Hyderabad',
+  5   TO_DATE('2023-04-01','YYYY-MM-DD'), NULL);
+
+1 row created.
+
+SQL> INSERT INTO employees
+  2  (emp_name, gender, department, designation, salary, location, joining_date, email_id)
+  3  VALUES
+  4  ('Anita', 'Female', 'Sales', 'Sales Executive', 38000, 'Delhi',
+  5   TO_DATE('2021-07-07','YYYY-MM-DD'), 'anita.sales@company.com');
+
+1 row created.
+
+SQL> INSERT INTO employees
+  2  (emp_name, gender, department, designation, salary, location, joining_date, email_id)
+  3  VALUES
+  4  ('Rohit', 'Male', 'IT', 'Developer', 45000, 'Chennai',
+  5   TO_DATE('2022-11-18','YYYY-MM-DD'), 'rohit@company.com');
+
+1 row created.
+
+SQL> INSERT INTO employees
+  2  (emp_name, gender, department, designation, salary, location, joining_date, email_id)
+  3  VALUES
+  4  ('Sanjay', 'Male', 'IT', 'Developer', NULL, 'Chennai',
+  5   TO_DATE('2020-02-02','YYYY-MM-DD'), NULL);
+
+1 row created.
+
+SQL> select * from employees;
+
+    EMP_ID EMP_NAME   GENDER     DEPARTMENT           DESIGNATION                        SALARY LOCATION             JOINING_D EMAIL_ID
+---------- ---------- ---------- -------------------- ------------------------------ ---------- -------------------- --------- ----------------------------------------
+      1001 Arun       Male       IT                   Developer                           45000 Chennai              10-JAN-22 arun@company.com
+      1002 Divya      Female     HR                   HR Executive                        40000 Bangalore            15-MAY-21 divya@company.com
+      1003 Mubeen     Male       IT                   Senior Developer                    55000 Chennai              20-MAR-23 mubeen@company.com
+      1004 Ravi       Male       Finance              Accountant                                Mumbai               18-JUL-20 ravi@company.com
+      1005 Anita      Female     Sales                Sales Executive                     38000 Delhi                12-SEP-22 anita@company.com
+      1006 Kumar      Male       HR                   Recruiter                           32000 Chennai              05-NOV-21 kumar@company.com
+      1007 Divya      Female     IT                   Tester                              40000 Bangalore            25-JUN-22 divya.it@company.com
+      1008 Rahul      Male       IT                   Developer                           45000 Chennai              14-MAR-20
+      1009 Sneha      Female     Finance              Analyst                                   Mumbai               08-JAN-23 sneha@company.com
+      1010 Amit       Male       Sales                Sales Manager                       60000 Delhi                01-DEC-19 amit@company.com
+      1011 Pooja      Female     HR                   HR Executive                        40000 Chennai              19-APR-21
+      1012 Ramesh     Male       IT                   Support Engineer                    30000 Hyderabad            10-AUG-22 ramesh@company.com
+      1013 Suresh     Male       IT                   Developer                           45000 Chennai              30-OCT-20 suresh@company.com
+      1014 Neha       Female     Sales                Sales Executive                     38000 Delhi                14-FEB-23 neha@company.com
+      1015 Arun       Male       IT                   Developer                           45000 Chennai              09-SEP-21 arun.it@company.com
+      1016 Kiran      Male       Finance              Accountant                                Mumbai               21-DEC-22 kiran@company.com
+      1017 Meena      Female     HR                   Recruiter                           32000 Bangalore            11-JUN-20 meena@company.com
+      1018 Vijay      Male       IT                   Tester                              35000 Hyderabad            01-APR-23
+      1019 Anita      Female     Sales                Sales Executive                     38000 Delhi                07-JUL-21 anita.sales@company.com
+      1020 Rohit      Male       IT                   Developer                           45000 Chennai              18-NOV-22 rohit@company.com
+      1021 Sanjay     Male       IT                   Developer                                 Chennai              02-FEB-20
+
+21 rows selected.
+
+SQL> set lines 200
+SQL> select * from employees;
+
+    EMP_ID EMP_NAME   GENDER     DEPARTMENT           DESIGNATION                        SALARY LOCATION             JOINING_D EMAIL_ID
+---------- ---------- ---------- -------------------- ------------------------------ ---------- -------------------- --------- ----------------------------------------
+      1001 Arun       Male       IT                   Developer                           45000 Chennai              10-JAN-22 arun@company.com
+      1002 Divya      Female     HR                   HR Executive                        40000 Bangalore            15-MAY-21 divya@company.com
+      1003 Mubeen     Male       IT                   Senior Developer                    55000 Chennai              20-MAR-23 mubeen@company.com
+      1004 Ravi       Male       Finance              Accountant                                Mumbai               18-JUL-20 ravi@company.com
+      1005 Anita      Female     Sales                Sales Executive                     38000 Delhi                12-SEP-22 anita@company.com
+      1006 Kumar      Male       HR                   Recruiter                           32000 Chennai              05-NOV-21 kumar@company.com
+      1007 Divya      Female     IT                   Tester                              40000 Bangalore            25-JUN-22 divya.it@company.com
+      1008 Rahul      Male       IT                   Developer                           45000 Chennai              14-MAR-20
+      1009 Sneha      Female     Finance              Analyst                                   Mumbai               08-JAN-23 sneha@company.com
+      1010 Amit       Male       Sales                Sales Manager                       60000 Delhi                01-DEC-19 amit@company.com
+      1011 Pooja      Female     HR                   HR Executive                        40000 Chennai              19-APR-21
+      1012 Ramesh     Male       IT                   Support Engineer                    30000 Hyderabad            10-AUG-22 ramesh@company.com
+      1013 Suresh     Male       IT                   Developer                           45000 Chennai              30-OCT-20 suresh@company.com
+      1014 Neha       Female     Sales                Sales Executive                     38000 Delhi                14-FEB-23 neha@company.com
+      1015 Arun       Male       IT                   Developer                           45000 Chennai              09-SEP-21 arun.it@company.com
+      1016 Kiran      Male       Finance              Accountant                                Mumbai               21-DEC-22 kiran@company.com
+      1017 Meena      Female     HR                   Recruiter                           32000 Bangalore            11-JUN-20 meena@company.com
+      1018 Vijay      Male       IT                   Tester                              35000 Hyderabad            01-APR-23
+      1019 Anita      Female     Sales                Sales Executive                     38000 Delhi                07-JUL-21 anita.sales@company.com
+      1020 Rohit      Male       IT                   Developer                           45000 Chennai              18-NOV-22 rohit@company.com
+      1021 Sanjay     Male       IT                   Developer                                 Chennai              02-FEB-20
+
+21 rows selected.
+
+1)Display all employee records.
+
+select * from employees;
+
+ EMP_ID EMP_NAME   GENDER     DEPARTMENT           DESIGNATION                        SALARY LOCATION             JOINING_D EMAIL_ID
+---------- ---------- ---------- -------------------- ------------------------------ ---------- -------------------- --------- ----------------------------------------
+      1001 Arun       Male       IT                   Developer                           45000 Chennai              10-JAN-22 arun@company.com
+      1002 Divya      Female     HR                   HR Executive                        40000 Bangalore            15-MAY-21 divya@company.com
+      1003 Mubeen     Male       IT                   Senior Developer                    55000 Chennai              20-MAR-23 mubeen@company.com
+      1004 Ravi       Male       Finance              Accountant                                Mumbai               18-JUL-20 ravi@company.com
+      1005 Anita      Female     Sales                Sales Executive                     38000 Delhi                12-SEP-22 anita@company.com
+      1006 Kumar      Male       HR                   Recruiter                           32000 Chennai              05-NOV-21 kumar@company.com
+      1007 Divya      Female     IT                   Tester                              40000 Bangalore            25-JUN-22 divya.it@company.com
+      1008 Rahul      Male       IT                   Developer                           45000 Chennai              14-MAR-20
+      1009 Sneha      Female     Finance              Analyst                                   Mumbai               08-JAN-23 sneha@company.com
+      1010 Amit       Male       Sales                Sales Manager                       60000 Delhi                01-DEC-19 amit@company.com
+      1011 Pooja      Female     HR                   HR Executive                        40000 Chennai              19-APR-21
+      1012 Ramesh     Male       IT                   Support Engineer                    30000 Hyderabad            10-AUG-22 ramesh@company.com
+      1013 Suresh     Male       IT                   Developer                           45000 Chennai              30-OCT-20 suresh@company.com
+      1014 Neha       Female     Sales                Sales Executive                     38000 Delhi                14-FEB-23 neha@company.com
+      1015 Arun       Male       IT                   Developer                           45000 Chennai              09-SEP-21 arun.it@company.com
+      1016 Kiran      Male       Finance              Accountant                                Mumbai               21-DEC-22 kiran@company.com
+      1017 Meena      Female     HR                   Recruiter                           32000 Bangalore            11-JUN-20 meena@company.com
+      1018 Vijay      Male       IT                   Tester                              35000 Hyderabad            01-APR-23
+      1019 Anita      Female     Sales                Sales Executive                     38000 Delhi                07-JUL-21 anita.sales@company.com
+      1020 Rohit      Male       IT                   Developer                           45000 Chennai              18-NOV-22 rohit@company.com
+      1021 Sanjay     Male       IT                   Developer                                 Chennai              02-FEB-20
+
+21 rows selected.
+
+2)Display only employee ID, name, and department.
+
+select emp_id,emp_name,department from employees;
+
+
+    EMP_ID EMP_NAME   DEPARTMENT
+---------- ---------- --------------------
+      1001 Arun       IT
+      1002 Divya      HR
+      1003 Mubeen     IT
+      1004 Ravi       Finance
+      1005 Anita      Sales
+      1006 Kumar      HR
+      1007 Divya      IT
+      1008 Rahul      IT
+      1009 Sneha      Finance
+      1010 Amit       Sales
+      1011 Pooja      HR
+      1012 Ramesh     IT
+      1013 Suresh     IT
+      1014 Neha       Sales
+      1015 Arun       IT
+      1016 Kiran      Finance
+      1017 Meena      HR
+      1018 Vijay      IT
+      1019 Anita      Sales
+      1020 Rohit      IT
+      1021 Sanjay     IT
+
+21 rows selected.
+
+3)Display employee name and salary for all employees.
+
+select emp_name,salary from employees;
+
+
+EMP_NAME       SALARY
+---------- ----------
+Arun            45000
+Divya           40000
+Mubeen          55000
+Ravi
+Anita           38000
+Kumar           32000
+Divya           40000
+Rahul           45000
+Sneha
+Amit            60000
+Pooja           40000
+Ramesh          30000
+Suresh          45000
+Neha            38000
+Arun            45000
+Kiran
+Meena           32000
+Vijay           35000
+Anita           38000
+Rohit           45000
+Sanjay
+
+21 rows selected.
+
+4)Display employees whose salary is greater than 40,000.
+
+select emp_id,emp_name,salary from employees where salary>40000;
+
+
+    EMP_ID EMP_NAME       SALARY
+---------- ---------- ----------
+      1001 Arun            45000
+      1003 Mubeen          55000
+      1008 Rahul           45000
+      1010 Amit            60000
+      1013 Suresh          45000
+      1015 Arun            45000
+      1020 Rohit           45000
+
+7 rows selected.
+
+5)Display employees whose salary is less than or equal to 35,000.
+
+select emp_id,emp_name,salary from employees where salary<=35000;
+
+ EMP_ID EMP_NAME       SALARY
+---------- ---------- ----------
+      1006 Kumar           32000
+      1012 Ramesh          30000
+      1017 Meena           32000
+      1018 Vijay           35000
+
+4 Rows selected.
+
+6)Display employees whose salary is exactly 45,000.
+
+select emp_id,emp_name,salary from employees where salary=45000;
+
+ EMP_ID EMP_NAME       SALARY
+---------- ---------- ----------
+      1001 Arun            45000
+      1008 Rahul           45000
+      1013 Suresh          45000
+      1015 Arun            45000
+      1020 Rohit           45000
+
+7)Display employees who joined after 01-Jan-2022.
+
+select emp_id,emp_name,salary,joining_date from employees WHERE joining_date > TO_DATE('01-01-2022', 'DD-MM-YYYY');
+
+ EMP_ID EMP_NAME       SALARY JOINING_D
+---------- ---------- ---------- ---------
+      1001 Arun            45000 10-JAN-22
+      1003 Mubeen          55000 20-MAR-23
+      1005 Anita           38000 12-SEP-22
+      1007 Divya           40000 25-JUN-22
+      1009 Sneha                 08-JAN-23
+      1012 Ramesh          30000 10-AUG-22
+      1014 Neha            38000 14-FEB-23
+      1016 Kiran                 21-DEC-22
+      1018 Vijay           35000 01-APR-23
+      1020 Rohit           45000 18-NOV-22
+
+10 rows selected.
+
+8)Display employees who joined before 01-Jan-2021
+
+select emp_id,emp_name,salary,joining_date from employees WHERE joining_date < DATE '2021-01-01';
+
+
+    EMP_ID EMP_NAME       SALARY JOINING_D
+---------- ---------- ---------- ---------
+      1004 Ravi                  18-JUL-20
+      1008 Rahul           45000 14-MAR-20
+      1010 Amit            60000 01-DEC-19
+      1013 Suresh          45000 30-OCT-20
+      1017 Meena           32000 11-JUN-20
+      1021 Sanjay                02-FEB-20
+
+6 rows selected.
+
+9)Display employees whose salary is between 35,000 and 50,000.
+
+SELECT emp_id,emp_name,salary FROM employeesWHERE salary BETWEEN 35000 AND 50000;
+
+ EMP_ID EMP_NAME       SALARY
+---------- ---------- ----------
+      1001 Arun            45000
+      1002 Divya           40000
+      1005 Anita           38000
+      1007 Divya           40000
+      1008 Rahul           45000
+      1011 Pooja           40000
+      1013 Suresh          45000
+      1014 Neha            38000
+      1015 Arun            45000
+      1018 Vijay           35000
+      1019 Anita           38000
+      1020 Rohit           45000
+
+12 rows selected.
+
+10)Display employees whose salary is not between 30,000 and 45,000.
+
+SELECT emp_id,emp_name,salary FROM employeesWHERE salary not BETWEEN 30000 AND 45000;
+
+
+    EMP_ID EMP_NAME       SALARY
+---------- ---------- ----------
+      1003 Mubeen          55000
+      1010 Amit            60000
+
+
+11)Display employees whose joining date is between 01-Jan-2021 and 31-Dec-2022.
+
+select emp_id,emp_name,salary from employees where joining_date between '01-Jan-2021' and '31-Dec-2022';
+
+
+    EMP_ID EMP_NAME       SALARY
+---------- ---------- ----------
+      1001 Arun            45000
+      1002 Divya           40000
+      1005 Anita           38000
+      1006 Kumar           32000
+      1007 Divya           40000
+      1011 Pooja           40000
+      1012 Ramesh          30000
+      1015 Arun            45000
+      1016 Kiran
+      1019 Anita           38000
+      1020 Rohit           45000
+
+11 rows selected.
+
+12)Display employees working in IT or HR departments.
+
+select emp_id,emp_name,department,salary from employees where department in('IT','HR');
+
+EMP_ID EMP_NAME   DEPARTMENT               SALARY
+---------- ---------- -------------------- ----------
+      1001 Arun       IT                        45000
+      1002 Divya      HR                        40000
+      1003 Mubeen     IT                        55000
+      1006 Kumar      HR                        32000
+      1007 Divya      IT                        40000
+      1008 Rahul      IT                        45000
+      1011 Pooja      HR                        40000
+      1012 Ramesh     IT                        30000
+      1013 Suresh     IT                        45000
+      1015 Arun       IT                        45000
+      1017 Meena      HR                        32000
+      1018 Vijay      IT                        35000
+      1020 Rohit      IT                        45000
+      1021 Sanjay     IT
+
+14 rows selected.
+
+13)Display employees working in Chennai, Bangalore, or Hyderabad.
+
+select emp_id,emp_name,department,location,salary from employees where location in('Chennai','Banglore','Hyderabad');
+
+
+ EMP_ID EMP_NAME   DEPARTMENT           LOCATION                 SALARY
+---------- ---------- -------------------- -------------------- ----------
+      1001 Arun       IT                   Chennai                   45000
+      1002 Divya      HR                   Bangalore                 40000
+      1003 Mubeen     IT                   Chennai                   55000
+      1006 Kumar      HR                   Chennai                   32000
+      1007 Divya      IT                   Bangalore                 40000
+      1008 Rahul      IT                   Chennai                   45000
+      1011 Pooja      HR                   Chennai                   40000
+      1012 Ramesh     IT                   Hyderabad                 30000
+      1013 Suresh     IT                   Chennai                   45000
+      1015 Arun       IT                   Chennai                   45000
+      1017 Meena      HR                   Bangalore                 32000
+      1018 Vijay      IT                   Hyderabad                 35000
+      1020 Rohit      IT                   Chennai                   45000
+      1021 Sanjay     IT                   Chennai
+
+14 rows selected.
+
+14)Display employees whose salary is IN (32000, 38000, 40000).
+
+select emp_id,emp_name,salary from employees where salary in(32000,38000,40000);
+
+ EMP_ID EMP_NAME       SALARY
+---------- ---------- ----------
+      1002 Divya           40000
+      1005 Anita           38000
+      1006 Kumar           32000
+      1007 Divya           40000
+      1011 Pooja           40000
+      1014 Neha            38000
+      1017 Meena           32000
+      1019 Anita           38000
+
+8 rows selected
+
+15)Display employees not working in Mumbai.
+
+select emp_id,emp_name,salary,location from employees where location not in('mumbai');
+
+EMP_ID EMP_NAME       SALARY LOCATION
+---------- ---------- ---------- --------------------
+      1001 Arun            45000 Chennai
+      1002 Divya           40000 Bangalore
+      1003 Mubeen          55000 Chennai
+      1005 Anita           38000 Delhi
+      1006 Kumar           32000 Chennai
+      1007 Divya           40000 Bangalore
+      1008 Rahul           45000 Chennai
+      1010 Amit            60000 Delhi
+      1011 Pooja           40000 Chennai
+      1012 Ramesh          30000 Hyderabad
+      1013 Suresh          45000 Chennai
+      1014 Neha            38000 Delhi
+      1015 Arun            45000 Chennai
+      1017 Meena           32000 Bangalore
+      1018 Vijay           35000 Hyderabad
+      1019 Anita           38000 Delhi
+      1020 Rohit           45000 Chennai
+      1021 Sanjay                Chennai
+
+18 rows selected.
+
+16)Display employees whose department is not in IT and HR.
+
+select emp_id,emp_name,department,salary from employees where department not in('IT','HR');
+
+
+    EMP_ID EMP_NAME   DEPARTMENT               SALARY
+---------- ---------- -------------------- ----------
+      1004 Ravi       Finance
+      1005 Anita      Sales                     38000
+      1009 Sneha      Finance
+      1010 Amit       Sales                     60000
+      1014 Neha       Sales                     38000
+      1016 Kiran      Finance
+      1019 Anita      Sales                     38000
+
+7 rows selected.
+
+17)Display employees whose designation is not in Developer and Tester.
+
+select emp_id,emp_name,designation from employees where designation not in('Developer','Tester');
+
+
+    EMP_ID EMP_NAME   DESIGNATION
+---------- ---------- ------------------------------
+      1002 Divya      HR Executive
+      1003 Mubeen     Senior Developer
+      1004 Ravi       Accountant
+      1005 Anita      Sales Executive
+      1006 Kumar      Recruiter
+      1009 Sneha      Analyst
+      1010 Amit       Sales Manager
+      1011 Pooja      HR Executive
+      1012 Ramesh     Support Engineer
+      1014 Neha       Sales Executive
+      1016 Kiran      Accountant
+      1017 Meena      Recruiter
+      1019 Anita      Sales Executive
+
+13 rows selected.
+
+18)Display employees whose name starts with ‘A’.
+
+select emp_id,emp_name,salary from employees where emp_name='A%';
+
+
+    EMP_ID EMP_NAME       SALARY
+---------- ---------- ----------
+      1001 Arun            45000
+      1005 Anita           38000
+      1010 Amit            60000
+      1015 Arun            45000
+      1019 Anita           38000
+
+19)Display employees whose salary is NULL
+
+select emp_id,emp_name,salary from employees where salary is null;
+
+ EMP_ID EMP_NAME       SALARY
+---------- ---------- ----------
+      1004 Ravi
+      1009 Sneha
+      1016 Kiran
+      1021 Sanjay
+
+20)Display employees whose email is NULL.
+
+select emp_id,email_id from employees where email_id is null;
+
+  EMP_ID EMAIL_ID
+---------- ----------------------------------------
+      1008
+      1011
+      1018
+      1021
+
+21)
+
+
+
+
